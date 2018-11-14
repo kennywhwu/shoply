@@ -1,5 +1,5 @@
-import { addItem, removeItem } from './actionCreators';
-import { ADD_ITEM, REMOVE_ITEM } from './actionTypes';
+import { addItem, decreaseItem, deleteItem } from './actionCreators';
+import { ADD_ITEM, DECREASE_ITEM, DELETE_ITEM } from './actionTypes';
 
 describe('addItem', () => {
   test('it returns object with key of type and payload', () => {
@@ -18,12 +18,23 @@ describe('addItem', () => {
   });
 });
 
-describe('removeItem', () => {
+describe('decreaseItem', () => {
   test('it returns object with key of type and id', () => {
     let id = 2;
-    let result = removeItem(id);
+    let result = decreaseItem(id);
     expect(result).toEqual({
-      type: REMOVE_ITEM,
+      type: DECREASE_ITEM,
+      id
+    });
+  });
+});
+
+describe('deleteItem', () => {
+  test('it returns object with key of type and id', () => {
+    let id = 2;
+    let result = deleteItem(id);
+    expect(result).toEqual({
+      type: DELETE_ITEM,
       id
     });
   });

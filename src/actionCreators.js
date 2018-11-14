@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM } from './actionTypes';
+import { ADD_ITEM, DECREASE_ITEM, DELETE_ITEM } from './actionTypes';
 
 export function addItem(item) {
   return {
@@ -7,9 +7,16 @@ export function addItem(item) {
   };
 }
 
-export function removeItem(id) {
+export function decreaseItem(id) {
   return {
-    type: REMOVE_ITEM,
+    type: DECREASE_ITEM,
+    id
+  };
+}
+
+export function deleteItem(id) {
+  return {
+    type: DELETE_ITEM,
     id
   };
 }

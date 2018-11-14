@@ -6,7 +6,7 @@ class ItemButtonsDisplay extends Component {
     return (
       <div className="ItemButtonsDisplay">
         <button onClick={this.props.handleAdd}>Add to Cart</button>
-        <button onClick={this.props.handleRemove}>Remove from Cart</button>
+        <button onClick={this.props.handleDecrease}>Remove from Cart</button>
       </div>
     );
   }

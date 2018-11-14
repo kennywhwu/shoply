@@ -5,7 +5,14 @@ class ItemButtonsCart extends Component {
   render() {
     return (
       <div className="ItemButtonsCart">
-        <button onClick={this.props.handleRemove}>Remove from Cart</button>
+        Quantity: {this.props.quantity}
+        <div>
+          <button onClick={this.props.handleAdd}>+</button>
+          <button onClick={this.props.handleDecrease}>-</button>
+          <br />
+          <button onClick={this.props.handleDelete}>Remove from cart</button>
+        </div>
+        <hr />
       </div>
     );
   }

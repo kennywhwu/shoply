@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './DisplayItems.css';
 import { connect } from 'react-redux';
 // import { ADD_ITEM, REMOVE_ITEM } from '../actionTypes';
-import { addItem, removeItem } from '../actionCreators';
+import { addItem, decreaseItem } from '../actionCreators';
 import itemsObj from '../items.json';
 import Item from '../Components/Item';
 import { Link } from 'react-router-dom';
@@ -16,7 +16,7 @@ class DisplayItems extends Component {
         item={e}
         key={e.id}
         handleAdd={this.props.addItem}
-        handleRemove={this.props.removeItem}
+        handleRemove={this.props.decreaseItem}
       />
     ));
     return (
@@ -46,5 +46,5 @@ function mapStateToProps(reduxState) {
 
 export default connect(
   mapStateToProps,
-  { addItem, removeItem }
+  { addItem, decreaseItem }
 )(DisplayItems);

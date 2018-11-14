@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM } from './actionTypes';
+import { ADD_ITEM, DECREASE_ITEM, DELETE_ITEM } from './actionTypes';
 
 const INITIAL_STATE = { cart: {} };
 
@@ -22,7 +22,7 @@ function rootReducer(state = INITIAL_STATE, action) {
       break;
 
     //updates store's cart to remove item or decrease quantity of item
-    case REMOVE_ITEM:
+    case DECREASE_ITEM:
       //if item to remove is not in the cart, do not modify the redux state
       if (!state.cart[action.id]) {
         return { ...state };
@@ -38,6 +38,14 @@ function rootReducer(state = INITIAL_STATE, action) {
 
         return { ...state, cart: { ...state.cart, [action.id]: item } };
       }
+      break;
+
+    //updates store's cart to remove item or decrease quantity of item
+    case DELETE_ITEM:
+      // remove item from cart
+      let cart = { ...state.cart };
+      delete cart[action.id];
+      return { ...state, cart };
       break;
 
     default:

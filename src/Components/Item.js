@@ -35,6 +35,7 @@ class Item extends Component {
         />
         {this.props.isPurchased ? (
           <ItemButtonsCart
+            quantity={this.props.item.quantity}
             handleDelete={this.handleDelete}
             handleAdd={this.handleAdd}
             handleDecrease={this.handleDecrease}
